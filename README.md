@@ -29,7 +29,7 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
-|username|string|null: false|
+|name|string|null: false|index: true|
 ### Association
 - has_many :groups
 - has_many :messages
@@ -37,21 +37,26 @@ Things you may want to cover:
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|text|text||
 |image|text||
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :chat-group
 - belongs_to :user
 
 
-## chat-groupsテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text||
-|user_id|integer|null: false, foreign_key: true|
+|name|text||
 ### Association
-- belongs_to :user
+- has_many :users_groups
 - has_many :messages
 
+## users_groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+
+- belongs_to :user
+- belongs_to :group
