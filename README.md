@@ -31,7 +31,7 @@ Things you may want to cover:
 |password|string|null: false|
 |name|string|null: false|index: true|
 ### Association
-- has_many :groups
+- has_many :groups, through: :users_groups
 - has_many :messages
 
 ## messagesテーブル
@@ -42,7 +42,7 @@ Things you may want to cover:
 |user|references|null: false, foreign_key: true|
 |group|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :chat-group
+- belongs_to :group
 - belongs_to :user
 
 
@@ -51,7 +51,7 @@ Things you may want to cover:
 |------|----|-------|
 |name|text||
 ### Association
-- has_many :users_groups
+- has_many :users, through: :users_groups
 - has_many :messages
 
 ## users_groupsテーブル
