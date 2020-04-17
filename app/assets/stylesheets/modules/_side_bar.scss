@@ -1,0 +1,59 @@
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background-color: $sidechaco;
+  
+  &_header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+
+    &__box {
+      height: 20px;
+      width: 260px;
+      margin: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      line-height: 20px;
+      &__menu {
+        width: 60px;
+        background-color: $sidechaco;
+        display: flex;
+        justify-content: flex-end;
+        a {
+          color: white;
+          // font-size: 13px;
+        }
+      }
+      &__name {
+        font-size: 16px;
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+  }
+  .sidebar_header__box__menu .sidebar_header__box__edit {
+    margin-right: 5px;
+  }
+
+  &_list {
+    background-color: $sidedarkg;
+    height: calc(100vh - 100px);
+    padding:  0 20px;
+    color: #fff;
+    // font-weight: bold;
+    &__groups__name {
+      font-size: 15px;
+      padding-top: 20px;
+    }
+    &__groups__message {
+      font-size: 11px;
+      padding-top: 5px;
+      padding-bottom: 40px;
+    }
+  }
+  
+}
+
+
+
