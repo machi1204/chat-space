@@ -15,6 +15,12 @@
       display: flex;
       justify-content: space-between;
       line-height: 20px;
+      &__name {
+        font-size: 16px;
+        color: #fff;
+        font-weight: bold;
+      }
+
       &__menu {
         width: 60px;
         background-color: $sidechaco;
@@ -22,17 +28,12 @@
         justify-content: flex-end;
         a {
           color: white;
-          // font-size: 13px;
+          font-size: 13px;
         }
-      }
-      &__name {
-        font-size: 16px;
-        color: #fff;
-        font-weight: bold;
       }
     }
   }
-  .sidebar_header__box__menu .sidebar_header__box__edit {
+  .sidebar_header__box__menu__edit {
     margin-right: 5px;
   }
 
