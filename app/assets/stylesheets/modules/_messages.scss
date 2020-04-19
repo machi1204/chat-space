@@ -59,6 +59,7 @@
   padding: 46px 40px;
   &__date {
     // margin-top: 35px;
+    color: red;
     margin-bottom: 10px;
     display: flex;
     &__name {
@@ -90,9 +91,11 @@
     height: 50px;
     width: 100%;
     padding: 0 10px;
+    display: flex;
     .input-box {
       display: flex;
       position: relative;
+      width: 100%;
     }
   }
   .submit-btn {
