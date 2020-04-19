@@ -2,43 +2,27 @@
   .mainchat_header
     .mainchat_header__leftbox
       %h3.mainchat_header__leftbox-title
-        グループ名
+        = @group.name
       %ul.mainchat_header__leftbox-members
         Member : 
-        %li.mainchat_header__leftbox_member
-          メンバー1
-        %li.mainchat_header__leftbox_member
-          メンバー2
-        %li.mainchat_header__leftbox_member
-          メンバー3
+        - @group.users.each do |user|
+          = user.name
 
     .mainchat_header__edit
-      %a(href="#") Edit
+      = link_to edit_group_path(@group) do 
+        Edit
 
   .mainchat_message
     .mainchat_message__date
-      .mainchat_message__date__name
-        Yoshihara
-      .mainchat_message__date__time
-        2020.02.20
-    .mainchat_message__content
-      おはようございます。
-
-    .mainchat_message__date
-      .mainchat_message__date__name
-        Machiko
-      .mainchat_message__date__time
-        2020.03.30
-    .mainchat_message__content
-      こんばんは。
+      .messages
+        = render @messages
 
   .mainchat_form
-    %form.new_message
+    = form_for [@group, @message] do |f|
       .input-box
-        %input{type: "text", class: "new_message", placeholder: "type a message"}
-        %label{class: "input-box__img"}
+        = f.text_field :content, class: "new_message", placeholder: "type a message"
+        = f.label :image, class: "input-box__img" do
           =icon('fas', 'image')
-          %input{type: "file", class: "input-box__file"}
-
-    .mainchat_form__submit-btn
-      %input{type: "submit", class: "submit-btn",value: "Send"}
+          = f.file_field :image, class: "input-box__file"
+      .mainchat_form__submit-btn
+        = f.submit 'Send', class: "submit-btn"
