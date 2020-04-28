@@ -42,6 +42,11 @@
     height: calc(100vh - 100px);
     padding:  0 20px;
     color: #fff;
+    overflow: scroll;
+    a {
+      text-decoration: none;
+    }
+
     // font-weight: bold;
     &__groups__name {
       font-size: 15px;
@@ -52,6 +57,8 @@
       font-size: 11px;
       padding-top: 5px;
       padding-bottom: 40px;
+      color: white;
+      // text-decoration: none;
     }
   }
   
